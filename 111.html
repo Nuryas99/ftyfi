@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярки</title>
+</head>
+<body>
+
+<p id="result"></p>
+
+<script>
+    let str = 'aaa AAA bbb BBB';
+    let res = str.replace(/[a-z]/gi, '!');
+
+    document.getElementById('result').textContent = res;
+</script>
+
+</body>
+</html>

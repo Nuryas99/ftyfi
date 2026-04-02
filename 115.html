@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярки (группировка)</title>
+</head>
+<body>
+
+<h2>Задача 1</h2>
+<p id="task1"></p>
+
+<h2>Задача 2</h2>
+<p id="task2"></p>
+
+<script>
+let str = 'aeeea aeea aea axa axxa axxxa';
+
+// №1 — a + (e любое кол-во ИЛИ x любое кол-во) + a
+let res1 = str.match(/a(e+|x+)a/g);
+document.getElementById('task1').textContent = res1;
+
+// №2 — a + (ee ИЛИ x любое кол-во) + a
+let res2 = str.match(/a(ee|x+)a/g);
+document.getElementById('task2').textContent = res2;
+
+</script>
+
+</body>
+</html>

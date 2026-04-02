@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярные выражения</title>
+</head>
+<body>
+
+<h2>Задача 1 — обернуть слова в #</h2>
+<p id="task1"></p>
+
+<h2>Задача 2 — вставить + между буквами</h2>
+<p id="task2"></p>
+
+<script>
+    let str = 'abc def xyz';
+
+    // №1 — #abc# #def# #xyz#
+    let res1 = str.replace(/\b[a-z]+\b/g, '#$&#');
+    document.getElementById('task1').textContent = res1;
+
+    // №2 — a+b+c d+e+f x+y+z
+    let res2 = str.replace(/(?!\b)(?<=\w)(?=\w)/g, '+');
+    document.getElementById('task2').textContent = res2;
+</script>
+
+</body>
+</html>

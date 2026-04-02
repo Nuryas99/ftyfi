@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярные выражения</title>
+</head>
+<body>
+
+<h2>Задача 1 — первая подстрока</h2>
+<p id="task1"></p>
+
+<h2>Задача 2 — последняя подстрока</h2>
+<p id="task2"></p>
+
+<script>
+    let str = 'abc def xyz';
+
+    // №1 — первая подстрока
+    let first = str.match(/[a-z]+/);
+    document.getElementById('task1').textContent = first[0];
+
+    // №2 — последняя подстрока
+    let all = str.match(/[a-z]+/g);
+    let last = all[all.length - 1];
+    document.getElementById('task2').textContent = last;
+</script>
+
+</body>
+</html>

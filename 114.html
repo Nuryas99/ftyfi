@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Multiline регулярки</title>
+</head>
+<body>
+
+<h2>Результаты</h2>
+
+<pre id="task1"></pre>
+<pre id="task2"></pre>
+<pre id="task3"></pre>
+<pre id="task4"></pre>
+<pre id="task5"></pre>
+<pre id="task6"></pre>
+
+<script>
+let str = `
+abc
+def
+ghi
+jkl
+`;
+
+// №1 — добавить ! в конец каждой строки
+let res1 = str.replace(/$/gm, '!');
+document.getElementById('task1').textContent = res1;
+
+// №2 — добавить ! в начало каждой строки
+let res2 = str.replace(/^/gm, '!');
+document.getElementById('task2').textContent = res2;
+
+// №3 — ! в начало и конец всей строки
+let res3 = str.replace(/^/, '!').replace(/$/, '!');
+document.getElementById('task3').textContent = res3;
+
+// №4 — ! везде (начало/конец + строки)
+let res4 = str.replace(/^/gm, '!').replace(/$/, '!');
+document.getElementById('task4').textContent = res4;
+
+// №5 — ! сверху/снизу + в конце строк
+let res5 = str.replace(/$/gm, '!').replace(/^/, '!').replace(/$/, '!');
+document.getElementById('task5').textContent = res5;
+
+// №6 — ! перед каждой строкой без пробелов
+let res6 = str.replace(/^\s*/gm, '!'); 
+document.getElementById('task6').textContent = res6;
+
+</script>
+
+</body>
+</html>
